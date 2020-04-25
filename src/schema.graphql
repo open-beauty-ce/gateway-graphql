@@ -1,0 +1,84 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type HorarioType {
+  id: ID!
+}
+
+type HorariosType {
+  paginas: Float!
+  pagina: Float!
+  total: Float!
+  itens: [HorarioType!]!
+}
+
+type Query {
+  horarios(opcoes: FiltroProcedimentosInputType): HorariosType!
+}
+
+input FiltroProcedimentosInputType {
+  filtro: FiltroProcedimento
+  ordenacao: OrdenacaoProcedimento
+  paginacao: PaginacaoInputType
+}
+
+input FiltroProcedimento {
+  id: CondicoesStringInputType
+  nome: CondicoesStringInputType
+  duracao: CondicoesIntInputType
+  doutor: DoutorInputType
+}
+
+input CondicoesStringInputType {
+  eq: String
+  regexp: String
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  ne: String
+  in: [String!]
+  nin: [String!]
+  and: [CondicoesStringInputType!]
+  or: [CondicoesStringInputType!]
+  nor: [CondicoesStringInputType!]
+  not: CondicoesStringInputType
+}
+
+input CondicoesIntInputType {
+  eq: Int
+  gt: Int
+  gte: Int
+  lt: Int
+  lte: Int
+  ne: Int
+  in: [Int!]
+  nin: [Int!]
+  and: [CondicoesIntInputType!]
+  or: [CondicoesIntInputType!]
+  nor: [CondicoesIntInputType!]
+  not: CondicoesIntInputType
+}
+
+input DoutorInputType {
+  id: CondicoesStringInputType
+  nome: CondicoesStringInputType
+}
+
+input OrdenacaoProcedimento {
+  id: OrdemEnumType
+  nome: OrdemEnumType
+  duracao: OrdemEnumType
+}
+
+enum OrdemEnumType {
+  NONE
+  ASC
+  DESC
+}
+
+input PaginacaoInputType {
+  limite: Int
+  pagina: Int
+}
