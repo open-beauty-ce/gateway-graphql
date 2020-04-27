@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REDES=( "agenda" )
+REDES=( "agenda" "autenticacao" )
 
 for REDE in "${REDES[@]}"
 do

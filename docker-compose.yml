@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   graphql:
@@ -9,12 +9,14 @@ services:
       - .:/app
     ports:
       - 9000:3000
-    environment:
-      MONGODB_URI: mongodb://root:root@db/agenda
     networks:
       - agenda
+      - autenticacao
 
 networks:
   agenda:
     external:
       name: agenda
+  autenticacao:
+    external:
+      name: autenticacao
