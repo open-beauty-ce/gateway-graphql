@@ -9,6 +9,8 @@ services:
       - .:/app
     ports:
       - 9000:3000
+    environment:
+      JWT_SECRET: JWT_SECRET
     networks:
       - agenda
       - autenticacao
