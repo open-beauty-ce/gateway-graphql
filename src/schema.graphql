@@ -82,3 +82,18 @@ input PaginacaoInputType {
   limite: Int
   pagina: Int
 }
+
+type Mutation {
+  autenticar(senha: String!, email: String!): String!
+  cadastrarConta(funcao: FuncaoEnumType, contatos: [ContatoInputType!]!, senha: String!, email: String!, nome: String!): Boolean!
+}
+
+enum FuncaoEnumType {
+  CLIENT
+  DOUTOR
+}
+
+input ContatoInputType {
+  telefone: String!
+  whatsapp: Boolean!
+}

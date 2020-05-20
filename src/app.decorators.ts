@@ -8,4 +8,13 @@ export const AgendaClient = () => Client({
     package: 'agenda',
     protoPath: join(process.cwd(), 'node_modules/descricao-servicos/proto/agenda.proto'),
   },
-})
+});
+
+export const AutenticacaoClient = () => Client({
+  transport: Transport.GRPC,
+  options: {
+    url: 'autenticacao:5000',
+    package: 'usuario',
+    protoPath: join(process.cwd(), 'node_modules/descricao-servicos/proto/usuario.proto'),
+  },
+});
